@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>
+Super Goal 1 | Units 1 & 2 | إعداد دكتور محسن الكاشف
+</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+:root{
+--primary:#2563eb;
+--secondary:#7c3aed;
+--success:#16a34a;
+--danger:#dc2626;
+--warning:#f59e0b;
+--dark:#172033;
+--muted:#64748b;
+--light:#f1f5f9;
+--white:#ffffff;
+}
+
+body{
+margin:0;
+font-family:
+"Segoe UI",
+Tahoma,
+Arial,
+sans-serif;
+background:
+linear-gradient(135deg,#eef2ff,#f8fafc);
+color:var(--dark);
+min-height:100vh;
+}
+
+*{
+-webkit-tap-highlight-color:transparent;
+}
+
+button{
+font-family:inherit;
+}
+
+header{
+background:
+linear-gradient(135deg,
+#1d4ed8,
+#4f46e5,
+#7c3aed);
+color:white;
+padding:24px 15px;
+text-align:center;
+box-shadow:0 5px 25px #0002;
+}
+
+.brand{
+font-size:17px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+header h1{
+margin:5px 0;
+font-size:32px;
+}
+
+header p{
+margin:5px;
+}
+
+.brand-footer{
+text-align:center;
+padding:25px 10px;
+color:#64748b;
+font-weight:bold;
+}
+
+.container{
+width:min(1150px,94%);
+margin:auto;
+padding:20px 0 40px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+margin-bottom:20px;
+}
+
+button{
+border:0;
+border-radius:13px;
+padding:11px 17px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:.2s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
+button:disabled{
+cursor:not-allowed;
+opacity:.65;
+transform:none;
+}
+
+.btn{
+background:var(--primary);
+color:white;
+}
+
+.btn2{
+background:#e2e8f0;
+color:var(--dark);
+}
+
+.green{
+background:var(--success);
+color:white;
+}
+
+.red{
+background:var(--danger);
+color:white;
+}
+
+.orange{
+background:var(--warning);
+color:white;
+}
+
+.purple{
+background:var(--secondary);
+color:white;
+}
+
+.card{
+background:white;
+border-radius:22px;
+padding:24px;
+margin-bottom:20px;
+box-shadow:
+0 10px 35px #0f172a12;
+}
+
+.hero{
+text-align:center;
+padding:45px 25px;
+}
+
+.hero h2{
+font-size:38px;
+margin:10px 0;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.8;
+}
+
+.stats{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(145px,1fr));
+gap:12px;
+margin:22px 0;
+}
+
+.stat{
+background:#f8fafc;
+border:1px solid #e2e8f0;
+border-radius:17px;
+padding:18px 10px;
+text-align:center;
+}
+
+.stat b{
+display:block;
+font-size:30px;
+color:var(--primary);
+margin-bottom:5px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+}
+
+.hidden{
+display:none!important;
+}
+
+.center{
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+background:#ede9fe;
+color:#6d28d9;
+padding:6px 12px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+margin:3px;
+}
+
+.progress{
+height:16px;
+background:#e2e8f0;
+border-radius:30px;
+overflow:hidden;
+margin:15px 0;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:
+linear-gradient(90deg,
+#2563eb,
+#7c3aed);
+transition:.5s;
+}
+
+.stage{
+background:white;
+border:2px solid #e2e8f0;
+border-radius:20px;
+padding:23px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.stage.open{
+border-color:#2563eb;
+}
+
+.stage.completed{
+border-color:#16a34a;
+}
+
+.stage.locked{
+opacity:.45;
+}
+
+.stage-icon{
+font-size:45px;
+}
+
+.stage h3{
+font-size:21px;
+margin:10px 0;
+}
+
+.stage-number{
+font-size:13px;
+color:#64748b;
+}
+
+.word-card{
+background:white;
+border:1px solid #e2e8f0;
+border-radius:20px;
+padding:20px;
+transition:.2s;
+}
+
+.word-card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 30px #0001;
+}
+
+.word-number{
+font-size:13px;
+color:#64748b;
+}
+
+.word{
+font-size:26px;
+font-weight:800;
+direction:ltr;
+text-align:center;
+margin:8px 0;
+}
+
+.meaning{
+font-size:18px;
+text-align:center;
+margin:8px;
+}
+
+.pronunciation{
+direction:ltr;
+text-align:center;
+color:#64748b;
+font-size:14px;
+}
+
+.example{
+direction:ltr;
+background:#f8fafc;
+border-radius:12px;
+padding:12px;
+text-align:center;
+margin:13px 0;
+line-height:1.6;
+}
+
+.word-icon{
+height:90px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.word-icon svg{
+width:75px;
+height:75px;
+}
+
+.game-card{
+max-width:800px;
+margin:auto;
+}
+
+.question{
+font-size:25px;
+font-weight:800;
+text-align:center;
+margin:28px 0;
+direction:ltr;
+line-height:1.6;
+}
+
+.options{
+display:grid;
+grid-template-columns:
+repeat(2,1fr);
+gap:12px;
+}
+
+.option{
+background:#eef2ff;
+color:#172033;
+border:2px solid #c7d2fe;
+min-height:55px;
+}
+
+.option:hover{
+background:#dbeafe;
+}
+
+.option.correct{
+background:#bbf7d0!important;
+border-color:#16a34a;
+}
+
+.option.wrong{
+background:#fecaca!important;
+border-color:#dc2626;
+}
+
+.feedback{
+min-height:40px;
+font-size:20px;
+font-weight:bold;
+text-align:center;
+margin:18px 0;
+}
+
+input[type=text]{
+width:100%;
+padding:15px;
+font-size:19px;
+border-radius:13px;
+border:2px solid #cbd5e1;
+outline:none;
+direction:ltr;
+text-align:center;
+}
+
+input[type=text]:focus{
+border-color:#2563eb;
+}
+
+.activity-box{
+background:#f8fafc;
+border-radius:18px;
+padding:20px;
+}
+
+.lesson{
+background:#f8fafc;
+border-right:5px solid #2563eb;
+border-radius:10px;
+padding:18px;
+margin-bottom:15px;
+line-height:1.8;
+}
+
+.lesson h3{
+margin-top:0;
+}
+
+.exam-question{
+padding:20px 0;
+border-bottom:1px solid #e2e8f0;
+}
+
+.exam-question:last-child{
+border-bottom:0;
+}
+
+.exam-options{
+display:grid;
+grid-template-columns:
+repeat(2,1fr);
+gap:8px;
+margin-top:12px;
+}
+
+.exam-options label{
+background:#f8fafc;
+border:1px solid #e2e8f0;
+padding:10px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.exam-options label:hover{
+background:#eef2ff;
+}
+
+.result{
+text-align:center;
+padding:35px 20px;
+}
+
+.result-score{
+font-size:55px;
+font-weight:900;
+color:#2563eb;
+}
+
+.review-item{
+background:#fff7ed;
+border-right:4px solid #f59e0b;
+padding:12px;
+border-radius:8px;
+margin:8px 0;
+}
+
+.celebrate{
+font-size:65px;
+animation:bounce 1s infinite alternate;
+}
+
+@keyframes bounce{
+from{transform:translateY(0)}
+to{transform:translateY(-12px)}
+}
+
+.lock-message{
+background:#fef2f2;
+color:#991b1b;
+padding:12px;
+border-radius:12px;
+margin:10px 0;
+}
+
+.small{
+font-size:13px;
+color:#64748b;
+}
+
+hr{
+border:0;
+border-top:1px solid #e2e8f0;
+margin:25px 0;
+}
+
+@media(max-width:700px){
+
+header h1{
+font-size:25px;
+}
+
+.hero h2{
+font-size:29px;
+}
+
+.options,
+.exam-options{
+grid-template-columns:1fr;
+}
+
+.question{
+font-size:21px;
+}
+
+.container{
+width:96%;
+}
+
+button{
+font-size:14px;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="brand">
+إعداد دكتور محسن الكاشف
+</div>
+
+<h1>
+🎓 Super Goal 1
+</h1>
+
+<p>
+Units 1 & 2 — Interactive Learning Game
+</p>
+
+<p>
+70 كلمة • 10 مراحل • Grammar • Exams
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+<button class="btn"
+onclick="showPage('home')">
+🏠 الرئيسية
+</button>
+
+<button class="btn"
+onclick="showPage('vocabulary')">
+📚 الكلمات
+</button>
+
+<button class="btn"
+onclick="showPage('stages')">
+🎮 المراحل
+</button>
+
+<button class="purple"
+onclick="showPage('grammar')">
+📖 Grammar
+</button>
+
+<button class="orange"
+onclick="startVocabularyExam()">
+📝 اختبار الكلمات
+</button>
+
+<button class="purple"
+onclick="startGrammarExam()">
+📖 اختبار Grammar
+</button>
+
+<button class="btn2"
+onclick="showPage('progress')">
+📊 تقدمي
+</button>
+
+</nav>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home">
+
+<div class="card hero">
+
+<div class="brand">
+إعداد دكتور محسن الكاشف
+</div>
+
+<h2>
+🚀 أهلاً بك في رحلة Super Goal 1
+</h2>
+
+<p>
+تعلم الإنجليزية بطريقة تفاعلية من خلال الكلمات،
+الألعاب، المراجعة، القواعد والاختبارات.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<b>70</b>
+كلمة مستهدفة
+</div>
+
+<div class="stat">
+<b>10</b>
+مراحل
+</div>
+
+<div class="stat">
+<b>5</b>
+أنشطة لكل كلمة
+</div>
+
+<div class="stat">
+<b id="homeXP">0</b>
+XP
+</div>
+
+</div>
+
+<button class="btn"
+onclick="startStage(1)">
+▶ ابدأ الرحلة
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h2>🎯 ماذا ستتعلم؟</h2>
+
+<div class="grid">
+
+<div>
+<h3>👋 Unit 1</h3>
+<p>Greetings & Saying Goodbye</p>
+<p>Introductions</p>
+<p>Verb be</p>
+<p>Possessive adjectives</p>
+<p>School Supplies</p>
+</div>
+
+<div>
+<h3>📅 Unit 2</h3>
+<p>Days of the Week</p>
+<p>Months of the Year</p>
+<p>Dates & Age</p>
+<p>Question Words</p>
+<p>In / On with Dates</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>🏆 نظام الرحلة</h2>
+
+<p>⭐ الإجابة الصحيحة = +10 XP</p>
+<p>⭐ إتقان الكلمة = +20 XP</p>
+<p>⭐ إكمال المرحلة = +100 XP</p>
+<p>⭐ كل مرحلة تفتح المرحلة التالية بعد اجتياز التحدي.</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     VOCABULARY
+===================================================== -->
+
+<section id="vocabulary" class="hidden">
+
+<div class="card">
+
+<h2>
+📚 الكلمات المستهدفة
+</h2>
+
+<p class="small">
+70 كلمة مستخرجة من Unit 1 وUnit 2.
+</p>
+
+<div id="vocabularyGrid"
+class="grid">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     STAGES
+===================================================== -->
+
+<section id="stages" class="hidden">
+
+<div class="card">
+
+<h2>🎮 رحلة المراحل</h2>
+
+<p>
+أكمل كل مرحلة لفتح المرحلة التالية.
+</p>
+
+<div id="stagesGrid"
+class="grid">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GAME
+===================================================== -->
+
+<section id="game" class="hidden">
+
+<div class="card game-card">
+
+<div class="center">
+
+<div class="brand">
+إعداد دكتور محسن الكاشف
+</div>
+
+<div>
+<span class="badge"
+id="gameStageName">
+</span>
+
+<span class="badge"
+id="gameActivityName">
+</span>
+
+<span class="badge"
+id="gameWordNumber">
+</span>
+</div>
+
+</div>
+
+<div class="progress">
+
+<div id="gameProgress"
+class="progress-bar">
+</div>
+
+</div>
+
+<div id="gameQuestion"
+class="question">
+</div>
+
+<div id="gameArea"
+class="activity-box">
+</div>
+
+<div id="feedback"
+class="feedback">
+</div>
+
+<div class="center">
+
+<button id="nextButton"
+class="green hidden"
+onclick="nextGameStep()">
+التالي ➜
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GRAMMAR
+===================================================== -->
+
+<section id="grammar" class="hidden">
+
+<div class="card">
+
+<div class="brand">
+إعداد دكتور محسن الكاشف
+</div>
+
+<h2>
+📖 Grammar — Units 1 & 2
+</h2>
+
+<div id="grammarLessons">
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
+
+<section id="progress" class="hidden">
+
+<div class="card">
+
+<div class="brand">
+إعداد دكتور محسن الكاشف
+</div>
+
+<h2>
+📊 لوحة تقدمي
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<b id="progressWords">0</b>
+الكلمات المتعلمة
+</div>
+
+<div class="stat">
+<b id="progressMastery">0%</b>
+الإتقان
+</div>
+
+<div class="stat">
+<b id="progressStages">0/10</b>
+المراحل
+</div>
+
+<div class="stat">
+<b id="progressXP">0</b>
+XP
+</div>
+
+</div>
+
+<div class="progress">
+
+<div id="masteryBar"
+class="progress-bar">
+</div>
+
+</div>
+
+<h3 id="progressLevel"
+class="center">
+🌱 المبتدئ
+</h3>
+
+<hr>
+
+<h3>
+📝 اختبار الكلمات
+</h3>
+
+<p id="vocabExamProgress">
+لم تدخل الاختبار بعد.
+</p>
+
+<h3>
+📖 اختبار Grammar
+</h3>
+
+<p id="grammarExamProgress">
+لم تدخل الاختبار بعد.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXAM
+===================================================== -->
+
+<section id="exam" class="hidden">
+
+<div id="examContent">
+</div>
+
+</section>
+
+
+</div>
+
+
+<footer class="brand-footer">
+
+إعداد دكتور محسن الكاشف
+<br>
+Super Goal 1 — Units 1 & 2
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   70 TARGET WORDS
+===================================================== */
+
+const words = [
+
+{
+en:"Good morning",
+ar:"صباح الخير",
+pron:"/ɡʊd ˈmɔːrnɪŋ/",
+example:"Good morning, Mr. Smith."
+},
+
+{
+en:"Good afternoon",
+ar:"مساء الخير بعد الظهر",
+pron:"/ɡʊd ˌæftərˈnuːn/",
+example:"Good afternoon!"
+},
+
+{
+en:"Good evening",
+ar:"مساء الخير",
+pron:"/ɡʊd ˈiːvnɪŋ/",
+example:"Good evening."
+},
+
+{
+en:"Good night",
+ar:"تصبح على خير",
+pron:"/ɡʊd naɪt/",
+example:"Good night!"
+},
+
+{
+en:"Goodbye",
+ar:"وداعًا",
+pron:"/ˌɡʊdˈbaɪ/",
+example:"Goodbye!"
+},
+
+{
+en:"Hello",
+ar:"مرحبًا",
+pron:"/həˈloʊ/",
+example:"Hello, how are you?"
+},
+
+{
+en:"Hi",
+ar:"مرحبًا / أهلاً",
+pron:"/haɪ/",
+example:"Hi!"
+},
+
+{
+en:"Bye",
+ar:"مع السلامة",
+pron:"/baɪ/",
+example:"Bye!"
+},
+
+{
+en:"Take care",
+ar:"اعتنِ بنفسك / مع السلامة",
+pron:"/teɪk keər/",
+example:"Take care!"
+},
+
+{
+en:"See you later",
+ar:"أراك لاحقًا",
+pron:"/siː juː ˈleɪtər/",
+example:"See you later."
+},
+
+{
+en:"How are you?",
+ar:"كيف حالك؟",
+pron:"/haʊ ɑːr juː/",
+example:"How are you?"
+},
+
+{
+en:"How's it going?",
+ar:"كيف تسير الأمور؟",
+pron:"/haʊz ɪt ˈɡoʊɪŋ/",
+example:"How's it going?"
+},
+
+{
+en:"Not bad",
+ar:"ليس سيئًا / لا بأس",
+pron:"/nɑːt bæd/",
+example:"Not bad, thanks."
+},
+
+{
+en:"Fine",
+ar:"بخير",
+pron:"/faɪn/",
+example:"I'm fine."
+},
+
+{
+en:"I'm OK",
+ar:"أنا بخير",
+pron:"/aɪm oʊˈkeɪ/",
+example:"I'm OK."
+},
+
+{
+en:"Nice to meet you",
+ar:"سعيد بلقائك",
+pron:"/naɪs tə miːt juː/",
+example:"Nice to meet you."
+},
+
+{
+en:"My name is",
+ar:"اسمي هو",
+pron:"/maɪ neɪm ɪz/",
+example:"My name is Mike."
+},
+
+{
+en:"What's your name?",
+ar:"ما اسمك؟",
+pron:"/wʌts jər neɪm/",
+example:"What's your name?"
+},
+
+{
+en:"My friends call me",
+ar:"أصدقائي ينادونني",
+pron:"/maɪ frendz kɔːl miː/",
+example:"My friends call me Mike."
+},
+
+{
+en:"friend",
+ar:"صديق",
+pron:"/frend/",
+example:"He is my friend."
+},
+
+{
+en:"classmate",
+ar:"زميل دراسة",
+pron:"/ˈklæsmeɪt/",
+example:"He is my classmate."
+},
+
+{
+en:"teacher",
+ar:"معلّم",
+pron:"/ˈtiːtʃər/",
+example:"My teacher is nice."
+},
+
+{
+en:"student",
+ar:"طالب",
+pron:"/ˈstuːdənt/",
+example:"I am a student."
+},
+
+{
+en:"principal",
+ar:"مدير المدرسة",
+pron:"/ˈprɪnsəpəl/",
+example:"The principal is here."
+},
+
+{
+en:"neighbor",
+ar:"جار",
+pron:"/ˈneɪbər/",
+example:"He is my neighbor."
+},
+
+{
+en:"married",
+ar:"متزوج",
+pron:"/ˈmærid/",
+example:"He is married."
+},
+
+{
+en:"single",
+ar:"أعزب / عزباء",
+pron:"/ˈsɪŋɡəl/",
+example:"She is single."
+},
+
+{
+en:"welcome",
+ar:"مرحبًا بك / أهلاً بك",
+pron:"/ˈwelkəm/",
+example:"Welcome to our school."
+},
+
+{
+en:"first time",
+ar:"المرة الأولى",
+pron:"/fɜːrst taɪm/",
+example:"This is my first time."
+},
+
+{
+en:"excited",
+ar:"متحمس",
+pron:"/ɪkˈsaɪtɪd/",
+example:"I am excited."
+},
+
+{
+en:"starving",
+ar:"جائع جدًا",
+pron:"/ˈstɑːrvɪŋ/",
+example:"I'm starving."
+},
+
+{
+en:"restaurant",
+ar:"مطعم",
+pron:"/ˈrestrɑːnt/",
+example:"Let's go to the restaurant."
+},
+
+{
+en:"books",
+ar:"كتب",
+pron:"/bʊks/",
+example:"Open your books."
+},
+
+{
+en:"eraser",
+ar:"ممحاة",
+pron:"/ɪˈreɪsər/",
+example:"This is an eraser."
+},
+
+{
+en:"pencil",
+ar:"قلم رصاص",
+pron:"/ˈpensəl/",
+example:"I have a pencil."
+},
+
+{
+en:"Sunday",
+ar:"الأحد",
+pron:"/ˈsʌndeɪ/",
+example:"Today is Sunday."
+},
+
+{
+en:"Monday",
+ar:"الاثنين",
+pron:"/ˈmʌndeɪ/",
+example:"I play football on Monday."
+},
+
+{
+en:"Tuesday",
+ar:"الثلاثاء",
+pron:"/ˈtuːzdeɪ/",
+example:"Tuesday is busy."
+},
+
+{
+en:"Wednesday",
+ar:"الأربعاء",
+pron:"/ˈwenzdeɪ/",
+example:"We meet on Wednesday."
+},
+
+{
+en:"Thursday",
+ar:"الخميس",
+pron:"/ˈθɜːrzdeɪ/",
+example:"Our visit is on Thursday."
+},
+
+{
+en:"Friday",
+ar:"الجمعة",
+pron:"/ˈfraɪdeɪ/",
+example:"Today is Friday."
+},
+
+{
+en:"Saturday",
+ar:"السبت",
+pron:"/ˈsætərdeɪ/",
+example:"Today is Saturday."
+},
+
+{
+en:"January",
+ar:"يناير",
+pron:"/ˈdʒænjueri/",
+example:"My birthday is in January."
+},
+
+{
+en:"February",
+ar:"فبراير",
+pron:"/ˈfebrueri/",
+example:"February is a month."
+},
+
+{
+en:"March",
+ar:"مارس",
+pron:"/mɑːrtʃ/",
+example:"School starts in March."
+},
+
+{
+en:"April",
+ar:"أبريل",
+pron:"/ˈeɪprəl/",
+example:"My vacation is in April."
+},
+
+{
+en:"May",
+ar:"مايو",
+pron:"/meɪ/",
+example:"Our vacation is in May."
+},
+
+{
+en:"June",
+ar:"يونيو",
+pron:"/dʒuːn/",
+example:"My birthday is in June."
+},
+
+{
+en:"July",
+ar:"يوليو",
+pron:"/dʒuˈlaɪ/",
+example:"July is hot."
+},
+
+{
+en:"August",
+ar:"أغسطس",
+pron:"/ˈɔːɡəst/",
+example:"School starts in August."
+},
+
+{
+en:"September",
+ar:"سبتمبر",
+pron:"/sepˈtembər/",
+example:"The test is in September."
+},
+
+{
+en:"October",
+ar:"أكتوبر",
+pron:"/ɑːkˈtoʊbər/",
+example:"October is a month."
+},
+
+{
+en:"November",
+ar:"نوفمبر",
+pron:"/noʊˈvembər/",
+example:"My birthday is in November."
+},
+
+{
+en:"December",
+ar:"ديسمبر",
+pron:"/dɪˈsembər/",
+example:"December is cold."
+},
+
+{
+en:"tomorrow",
+ar:"غدًا",
+pron:"/təˈmɑːroʊ/",
+example:"What is the date tomorrow?"
+},
+
+{
+en:"today",
+ar:"اليوم",
+pron:"/təˈdeɪ/",
+example:"What day is today?"
+},
+
+{
+en:"date",
+ar:"التاريخ",
+pron:"/deɪt/",
+example:"What is the date?"
+},
+
+{
+en:"age",
+ar:"العمر",
+pron:"/eɪdʒ/",
+example:"What is your age?"
+},
+
+{
+en:"final test",
+ar:"الاختبار النهائي",
+pron:"/ˈfaɪnəl test/",
+example:"Our final test is on September 21st."
+},
+
+{
+en:"vacation",
+ar:"الإجازة",
+pron:"/veɪˈkeɪʃən/",
+example:"When is your vacation?"
+},
+
+{
+en:"first name",
+ar:"الاسم الأول",
+pron:"/fɜːrst neɪm/",
+example:"What is your first name?"
+},
+
+{
+en:"last name",
+ar:"اسم العائلة",
+pron:"/læst neɪm/",
+example:"What is your last name?"
+},
+
+{
+en:"birth date",
+ar:"تاريخ الميلاد",
+pron:"/bɜːrθ deɪt/",
+example:"What is your birth date?"
+},
+
+{
+en:"information form",
+ar:"نموذج معلومات",
+pron:"/ˌɪnfərˈmeɪʃən fɔːrm/",
+example:"Complete the information form."
+},
+
+{
+en:"pet",
+ar:"حيوان أليف",
+pron:"/pet/",
+example:"Do you have a pet?"
+},
+
+{
+en:"meeting",
+ar:"اجتماع",
+pron:"/ˈmiːtɪŋ/",
+example:"I have a meeting."
+},
+
+{
+en:"reminding",
+ar:"تذكير / يذكّر",
+pron:"/rɪˈmaɪndɪŋ/",
+example:"Thank you for reminding me."
+},
+
+{
+en:"surprise",
+ar:"مفاجأة",
+pron:"/sərˈpraɪz/",
+example:"I have a surprise."
+},
+
+{
+en:"game",
+ar:"لعبة / مباراة",
+pron:"/ɡeɪm/",
+example:"Let's watch the game."
+},
+
+{
+en:"life span",
+ar:"مدة الحياة / العمر المتوقع",
+pron:"/laɪf spæn/",
+example:"What is the life span of a turtle?"
+}
+
+];
+
+
+/* =====================================================
+   STAGE NAMES
+===================================================== */
+
+const stages=[
+
+{
+name:"مرحلة المبتدئ",
+icon:"🌱"
+},
+
+{
+name:"مرحلة التجهيز",
+icon:"🧰"
+},
+
+{
+name:"مرحلة إعداد الأبطال",
+icon:"🦸"
+},
+
+{
+name:"مرحلة الانطلاق",
+icon:"🚀"
+},
+
+{
+name:"مرحلة صانع الكلمات",
+icon:"⭐"
+},
+
+{
+name:"مرحلة بطل القواعد",
+icon:"📖"
+},
+
+{
+name:"مرحلة تحدي المحترفين",
+icon:"🔥"
+},
+
+{
+name:"مرحلة قمة الإنجاز",
+icon:"🏆"
+},
+
+{
+name:"مرحلة سيد الإنجليزية",
+icon:"👑"
+},
+
+{
+name:"مرحلة سوبر جول ماستر",
+icon:"🥇"
+}
+
+];
+
+
+/* =====================================================
+   STATE
+===================================================== */
+
+const defaultState={
+
+xp:0,
+
+learned:[],
+
+unlocked:1,
+
+completed:[],
+
+stageChecks:{},
+
+vocabExam:null,
+
+grammarExam:null
+
+};
+
+
+let state=
+JSON.parse(
+localStorage.getItem("DrMohsenSuperGoal")
+) ||
+JSON.parse(
+JSON.stringify(defaultState)
+);
+
+
+let currentStage=1;
+
+let currentWord=0;
+
+let currentActivity=1;
+
+let stageCorrect=0;
+
+let stageCheckMode=false;
+
+let stageCheckQuestions=[];
+
+let stageCheckIndex=0;
+
+
+/* =====================================================
+   PAGE SYSTEM
+===================================================== */
+
+function showPage(id){
+
+document
+.querySelectorAll("section")
+.forEach(
+section=>
+section.classList.add("hidden")
+);
+
+document
+.getElementById(id)
+.classList.remove("hidden");
+
+
+if(id==="vocabulary")
+renderVocabulary();
+
+if(id==="stages")
+renderStages();
+
+if(id==="grammar")
+renderGrammar();
+
+if(id==="progress")
+renderProgress();
+
+updateAll();
+
+}
+
+
+/* =====================================================
+   SAVE
+===================================================== */
+
+function save(){
+
+localStorage.setItem(
+"DrMohsenSuperGoal",
+JSON.stringify(state)
+);
+
+updateAll();
+
+}
+
+
+/* =====================================================
+   UPDATE
+===================================================== */
+
+function updateAll(){
+
+let xp=document.getElementById("homeXP");
+
+if(xp)
+xp.textContent=state.xp;
+
+let wordsEl=
+document.getElementById("progressWords");
+
+if(wordsEl)
+wordsEl.textContent=
+state.learned.length;
+
+let mastery=
+Math.round(
+state.learned.length/70*100
+);
+
+let m=
+document.getElementById("progressMastery");
+
+if(m)
+m.textContent=mastery+"%";
+
+let stagesEl=
+document.getElementById("progressStages");
+
+if(stagesEl)
+stagesEl.textContent=
+state.completed.length+"/10";
+
+let xpEl=
+document.getElementById("progressXP");
+
+if(xpEl)
+xpEl.textContent=state.xp;
+
+let bar=
+document.getElementById("masteryBar");
+
+if(bar)
+bar.style.width=mastery+"%";
+
+let level=
+document.getElementById("progressLevel");
+
+if(level)
+level.textContent=
+getLevel();
+
+let ve=
+document.getElementById("vocabExamProgress");
+
+if(ve){
+
+ve.textContent=
+state.vocabExam
+?
+`آخر نتيجة: ${state.vocabExam.score}/70`
+:
+"لم تدخل الاختبار بعد.";
+
+}
+
+let ge=
+document.getElementById("grammarExamProgress");
+
+if(ge){
+
+ge.textContent=
+state.grammarExam
+?
+`آخر نتيجة: ${state.grammarExam.score}/30`
+:
+"لم تدخل الاختبار بعد.";
+
+}
+
+}
+
+
+/* =====================================================
+   LEVEL
+===================================================== */
+
+function getLevel(){
+
+if(state.xp>=5000)
+return"🥇 سوبر جول ماستر";
+
+if(state.xp>=3000)
+return"👑 سيد الإنجليزية";
+
+if(state.xp>=1500)
+return"🏆 Word Master";
+
+if(state.xp>=500)
+return"🎯 Learner";
+
+return"🌱 المبتدئ";
+
+}
+
+
+/* =====================================================
+   VOCABULARY CARDS
+===================================================== */
+
+function renderVocabulary(){
+
+const box=
+document.getElementById(
+"vocabularyGrid"
+);
+
+box.innerHTML="";
+
+words.forEach(
+(w,index)=>{
+
+let learned=
+state.learned.includes(index);
+
+box.innerHTML+=`
+
+<div class="word-card">
+
+<div class="word-number">
+الكلمة ${index+1}
+${learned?" • ✅ متقنة":""}
+</div>
+
+<div class="word-icon">
+
+<svg viewBox="0 0 100 100">
+
+<circle
+cx="50"
+cy="50"
+r="40"
+fill="#dbeafe"/>
+
+<text
+x="50"
+y="58"
+font-size="35"
+text-anchor="middle">
+${index<35?"📘":"📅"}
+</text>
+
+</svg>
+
+</div>
+
+<div class="word">
+${w.en}
+</div>
+
+<div class="meaning">
+${w.ar}
+</div>
+
+<div class="pronunciation">
+${w.pron}
+</div>
+
+<div class="example">
+${w.example}
+</div>
+
+<div class="center">
+
+<button
+class="btn"
+onclick="speak('${escapeAttr(w.en)}')">
+🔊 اسمع
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+);
+
+}
+
+
+/* =====================================================
+   STAGES
+===================================================== */
+
+function renderStages(){
+
+const box=
+document.getElementById(
+"stagesGrid"
+);
+
+box.innerHTML="";
+
+stages.forEach(
+(s,index)=>{
+
+let number=index+1;
+
+let open=
+number<=state.unlocked;
+
+let complete=
+state.completed.includes(number);
+
+box.innerHTML+=`
+
+<div class="stage
+${open?"open":"locked"}
+${complete?"completed":""}">
+
+<div class="stage-icon">
+${s.icon}
+</div>
+
+<div class="stage-number">
+المرحلة ${number}
+</div>
+
+<h3>
+${s.name}
+</h3>
+
+<p>
+الكلمات:
+${index*7+1}
+-
+${index*7+7}
+</p>
+
+<p>
+${
+complete
+?
+"✅ مكتملة"
+:
+open
+?
+"🔓 مفتوحة"
+:
+"🔒 مغلقة"
+}
+</p>
+
+${
+open
+?
+`
+
+<button
+class="btn"
+onclick="startStage(${number})">
+${complete?"🔁 مراجعة المرحلة":"▶ ابدأ المرحلة"}
+</button>
+
+`
+:
+`
+
+<div class="lock-message">
+أكمل المرحلة السابقة لفتحها.
+</div>
+
+`
+}
+
+</div>
+
+`;
+
+}
+
+);
+
+}
+
+
+/* =====================================================
+   START STAGE
+===================================================== */
+
+function startStage(number){
+
+if(number>state.unlocked){
+
+alert(
+"🔒 هذه المرحلة مغلقة.\nأكمل المرحلة السابقة أولًا."
+);
+
+return;
+
+}
+
+currentStage=number;
+
+currentWord=0;
+
+currentActivity=1;
+
+stageCheckMode=false;
+
+stageCheckQuestions=[];
+
+stageCheckIndex=0;
+
+showPage("game");
+
+renderGame();
+
+}
+
+
+/* =====================================================
+   CURRENT WORD
+===================================================== */
+
+function getCurrentWord(){
+
+return words[
+(currentStage-1)*7+
+currentWord
+];
+
+}
+
+
+/* =====================================================
+   GAME RENDER
+===================================================== */
+
+function renderGame(){
+
+let w=getCurrentWord();
+
+let s=stages[
+currentStage-1
+];
+
+document.getElementById(
+"gameStageName"
+).textContent=
+`${s.icon} ${s.name}`;
+
+document.getElementById(
+"gameActivityName"
+).textContent=
+`النشاط ${currentActivity}/5`;
+
+document.getElementById(
+"gameWordNumber"
+).textContent=
+`الكلمة ${currentWord+1}/7`;
+
+document.getElementById(
+"gameProgress"
+).style.width=
+(
+(
+currentWord*5+
+currentActivity
+)/
+35*100
+)+"%";
+
+document.getElementById(
+"feedback"
+).textContent="";
+
+document.getElementById(
+"nextButton"
+).classList.add("hidden");
+
+
+let q=
+document.getElementById(
+"gameQuestion"
+);
+
+let area=
+document.getElementById(
+"gameArea"
+);
+
+
+/* =====================================================
+   ACTIVITY 1
+===================================================== */
+
+if(currentActivity===1){
+
+q.innerHTML=
+"🔊 استمع واختر الكلمة الصحيحة";
+
+area.innerHTML=`
+
+<div class="center">
+
+<button
+class="btn"
+onclick="speak('${escapeAttr(w.en)}')">
+🔊 استمع للكلمة
+</button>
+
+</div>
+
+<br>
+
+<div class="options">
+
+${makeWordOptions(w.en)
+.map(
+option=>`
+
+<button
+class="option"
+onclick="
+checkChoice(
+this,
+'${escapeAttr(option)}',
+'${escapeAttr(w.en)}'
+)">
+${option}
+</button>
+
+`
+)
+.join("")}
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   ACTIVITY 2
+===================================================== */
+
+else if(currentActivity===2){
+
+q.innerHTML=
+`اختر معنى:
+<span>${w.en}</span>`;
+
+area.innerHTML=`
+
+<div class="options">
+
+${makeMeaningOptions(w.ar)
+.map(
+option=>`
+
+<button
+class="option"
+onclick="
+checkChoice(
+this,
+'${escapeAttr(option)}',
+'${escapeAttr(w.ar)}'
+)">
+${option}
+</button>
+
+`
+)
+.join("")}
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   ACTIVITY 3
+===================================================== */
+
+else if(currentActivity===3){
+
+let blank=
+makeBlank(
+w.example,
+w.en
+);
+
+q.innerHTML=
+"🧩 أكمل الجملة";
+
+area.innerHTML=`
+
+<div class="example">
+${blank}
+</div>
+
+<input
+type="text"
+id="textAnswer"
+placeholder="اكتب الكلمة الناقصة بالإنجليزية">
+
+<br><br>
+
+<div class="center">
+
+<button
+class="btn"
+onclick="
+checkTextAnswer(
+'${escapeAttr(w.en)}'
+)">
+تحقق
+</button>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   ACTIVITY 4
+===================================================== */
+
+else if(currentActivity===4){
+
+q.innerHTML=
+"⌨️ اكتب الكلمة الإنجليزية";
+
+area.innerHTML=`
+
+<div class="meaning">
+${w.ar}
+</div>
+
+<div class="example">
+${w.example}
+</div>
+
+<input
+type="text"
+id="textAnswer"
+placeholder="Type the English word">
+
+<br><br>
+
+<div class="center">
+
+<button
+class="btn"
+onclick="
+checkTextAnswer(
+'${escapeAttr(w.en)}'
+)">
+تحقق
+</button>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   ACTIVITY 5
+===================================================== */
+
+else{
+
+q.innerHTML=
+"🎯 اختر الكلمة الصحيحة";
+
+area.innerHTML=`
+
+<div class="meaning">
+${w.ar}
+</div>
+
+<div class="options">
+
+${makeWordOptions(w.en)
+.map(
+option=>`
+
+<button
+class="option"
+onclick="
+checkChoice(
+this,
+'${escapeAttr(option)}',
+'${escapeAttr(w.en)}'
+)">
+${option}
+</button>
+
+`
+)
+.join("")}
+
+</div>
+
+`;
+
+}
+
+}
+
+
+/* =====================================================
+  
